@@ -44,12 +44,13 @@ function netejar() {
                 @keyup.enter="buscar"
             />
 
-            <v-btn color="#1976D2"
+            <v-btn style="margin-right: 1%;"
+            color="#1976D2"
             @click="buscar">
                 Cercar
             </v-btn>
 
-            <v-btn color="#424242"
+            <v-btn color="#424242" 
             @click="netejar">
                 Netejar
             </v-btn>
