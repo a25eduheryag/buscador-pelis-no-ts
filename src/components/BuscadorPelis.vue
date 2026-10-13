@@ -32,22 +32,25 @@ function netejar() {
 </script>
 
 <template>
-    <v-app-bar title="Cercador de pelicules"></v-app-bar>
+    <v-app-bar title="Cercador de pelicules" color="#212121"></v-app-bar>
 
-    <v-main>
+    <v-main style="background-color: #121212;">
         <v-container>
 
             <v-text-field
+                bg-color="#242424"
                 v-model="cerca"
                 label="Què vols cercar?"
                 @keyup.enter="buscar"
             />
 
-            <v-btn @click="buscar">
+            <v-btn color="#1976D2"
+            @click="buscar">
                 Cercar
             </v-btn>
 
-            <v-btn @click="netejar">
+            <v-btn color="#424242"
+            @click="netejar">
                 Netejar
             </v-btn>
 
@@ -58,6 +61,8 @@ function netejar() {
                 No s'han trobat películes amb el titol {{cerca}}
             </v-alert>
 
+            <br><br><br>
+
             <v-row>
                 <v-col
                     v-for="element in resultats"
@@ -66,9 +71,9 @@ function netejar() {
                     md="3"
                 >
 
-                    <v-card>
-                        {{ element.Title }}
-                        ({{ element.Year }})
+                    <v-card color="#212121">
+                        <v-card-title class="text-white">{{ element.Title }}</v-card-title>
+                        <v-card-text class="text-grey-lighten-1">{{ element.Year }}</v-card-text>
                         <img
                             width="300"
                             :src="element.Poster"
@@ -83,7 +88,7 @@ function netejar() {
                             <template v-slot:activator="{ props: activatorProps }">
                                 <v-btn
                                     v-bind="activatorProps"
-                                    color="surface-variant"
+                                    color="#1976D2"
                                     text="Més info"
                                     variant="flat"
                                     @click="buscarDetall(element.imdbID)"
